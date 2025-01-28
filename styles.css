@@ -1,8 +1,10 @@
-.index{
+/* Default Styles */
+.index {
     display: flex;
     border: 10px solid darkmagenta;
-    height: 400px;
-    width: 600px;
+    width: 90%; /* Flexible width */
+    max-width: 600px; /* Maximum width for large screens */
+    height: auto;
     justify-self: center;
     align-self: center;
     margin-top: 30px;
@@ -11,10 +13,11 @@
     justify-content: center;
     align-items: center;
 }
-h1{
-    width: 550px;
+
+h1 {
+    width: 100%; /* Full width of parent container */
     height: 60px;
-    color:black;
+    color: black;
     background-color: lightskyblue;
     padding: 10px;
     border: 10px double lightseagreen;
@@ -23,7 +26,8 @@ h1{
     justify-content: center;
     align-items: center;
 }
-.list{
+
+.list {
     justify-self: center;
     list-style: none;
     text-decoration: none;
@@ -32,91 +36,47 @@ h1{
     border-radius: 20px;
     border: 5px dashed lightseagreen;
     box-sizing: border-box;
-    width: 200px;
-    height: 180px;
+    width: 80%; /* Flexible width */
+    max-width: 250px; /* Max width for larger screens */
+    height: auto; /* Adjust height based on content */
     background-color: lightskyblue;
     padding-top: 10px;
 }
-a{
-text-align: center;
-text-decoration: none;
-font-size: 25px;
-font-family:cursive;
-color: darkmagenta;
-align-self: center;
-gap:7px;
+
+a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: cursive;
+    color: darkmagenta;
+    align-self: center;
+    gap: 7px;
 }
-li a{
-    color:black;   
+
+li a {
+    color: black;
 }
-.milk{
+
+.milk, .noodles, .soup {
     display: flex;
-height: 1100px;
-width: 800px;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-border: 5px solid palevioletred;
-align-self: center;
-justify-self: center;
+    width: 90%; /* Flexible width */
+    max-width: 1000px; /* Limit width for large screens */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid palevioletred;
+    align-self: center;
+    justify-self: center;
 }
-h3{
+
+h3 {
     color: darkcyan;
     font-size: 30px;
     margin-bottom: 5px;
-}
-.milk a{
-    color:darkcyan;
-    font-size: 30px;
-    height: 35;
-    width: 550px;
-    border: lightseagreen;
-    background-color: aquamarine;
-}
-.milkd{
-    align-self: flex-start;
-}
-ol{
-    align-self:flex-start ;
+    width: 100%;
 }
 
-
-.noodles {
-    display: flex;
-    height: 1550px;
-    width: 1000px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 5px solid palevioletred;
-    align-self: center;
-    justify-self: center;
-}
-
-.noodles a {
-    color: darkcyan;
-    font-size: 30px;
-    height: 35;
-    width: 550px;
-    border: lightseagreen;
-    background-color: aquamarine;
-}
-.noodlesd {
-    align-self: flex-start;
-}
-.soup {
-    display: flex;
-    height: 1240px;
-    width: 1000px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 5px solid palevioletred;
-    align-self: center;
-    justify-self: center;
-}
-
-.soup a {
+.milk a, .noodles a, .soup a {
     color: darkcyan;
     font-size: 30px;
     height: 35px;
@@ -125,8 +85,63 @@ ol{
     background-color: aquamarine;
 }
 
-.soupd {
+.milkd, .noodlesd, .soupd {
     align-self: flex-start;
 }
 
+ol {
+    align-self: flex-start;
+}
 
+/* Media Queries for Mobile and Tablet */
+@media (max-width: 768px) {
+    .index {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    h1 {
+        font-size: 35px; /* Adjust font size for tablet */
+    }
+    h3{
+        width: 80;
+    }
+
+    .list {
+        font-size: 25px;
+        width: 90%; /* Adjust list width for smaller screens */
+        max-width: 250px;
+    }
+
+    .milk, .noodles, .soup {
+        width: 90%; /* Ensure these elements scale down on tablet */
+    }
+
+    .milk a, .noodles a, .soup a {
+        width: 100%; /* Full width for links */
+    }
+}
+
+@media (max-width: 480px) {
+    .index {
+        width: 100%; /* Full width on mobile */
+    }
+
+    h1 {
+        font-size: 25px; /* Smaller font size for mobile */
+    }
+
+    .list {
+        font-size: 20px; /* Adjust list font size */
+        width: 90%; /* Ensure the list is responsive */
+        max-width: 200px;
+    }
+
+    .milk, .noodles, .soup {
+        width: 100%; /* Full width for containers */
+        height: auto; /* Adjust height to content */
+    }
+
+    .milk a, .noodles a, .soup a {
+        width: 100%; /* Ensure links take full width */
+    }
+}
